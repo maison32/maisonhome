@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Reference – Maisonhome Documentation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Maisonhome Documentation</h1>
+    <p class="subtitle">Everything you need to get up and running with maisonhome.</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="guide.html">Guide</a>
+    <a href="api.html" class="active">API</a>
+  </nav>
+
+  <main class="prose">
+    <h2>Overview</h2>
+    <p>
+      The maisonhome API exposes a set of endpoints that let you interact with the
+      application programmatically. All responses are returned as JSON.
+    </p>
+
+    <h2>Base URL</h2>
+    <pre><code>http://localhost:3000/api</code></pre>
+
+    <h2>Endpoints</h2>
+
+    <h3>GET /status</h3>
+    <p>Returns the current status of the application.</p>
+    <table class="api-table">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Type</th>
+          <th>Required</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="4"><em>No parameters</em></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>Example response:</strong></p>
+    <pre><code>{
+  "status": "ok",
+  "version": "1.0.0"
+}</code></pre>
+
+    <h3>GET /items</h3>
+    <p>Returns a list of all items.</p>
+    <table class="api-table">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Type</th>
+          <th>Required</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>limit</code></td>
+          <td>integer</td>
+          <td>No</td>
+          <td>Maximum number of items to return (default: <code>20</code>).</td>
+        </tr>
+        <tr>
+          <td><code>offset</code></td>
+          <td>integer</td>
+          <td>No</td>
+          <td>Number of items to skip (default: <code>0</code>).</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>Example response:</strong></p>
+    <pre><code>{
+  "items": [
+    { "id": 1, "name": "Item One" },
+    { "id": 2, "name": "Item Two" }
+  ],
+  "total": 2
+}</code></pre>
+
+    <h3>POST /items</h3>
+    <p>Creates a new item.</p>
+    <table class="api-table">
+      <thead>
+        <tr>
+          <th>Field</th>
+          <th>Type</th>
+          <th>Required</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>name</code></td>
+          <td>string</td>
+          <td>Yes</td>
+          <td>The name of the new item.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>Example request body:</strong></p>
+    <pre><code>{
+  "name": "New Item"
+}</code></pre>
+    <p><strong>Example response:</strong></p>
+    <pre><code>{
+  "id": 3,
+  "name": "New Item"
+}</code></pre>
+
+    <h2>Error responses</h2>
+    <p>All errors follow a consistent shape:</p>
+    <pre><code>{
+  "error": "Not Found",
+  "message": "The requested resource could not be found.",
+  "status": 404
+}</code></pre>
+  </main>
+
+  <footer>
+    Last updated: <time datetime="2026-03-24">March 24, 2026</time>
+  </footer>
+
+</body>
+</html>
