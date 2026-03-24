@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guide – Maisonhome Documentation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Maisonhome Documentation</h1>
+    <p class="subtitle">Everything you need to get up and running with maisonhome.</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="guide.html" class="active">Guide</a>
+    <a href="api.html">API</a>
+  </nav>
+
+  <main class="prose">
+    <h2>Installation</h2>
+    <p>Clone the repository and install the required dependencies:</p>
+    <pre><code>git clone https://github.com/maison32/maisonhome.git
+cd maisonhome</code></pre>
+    <p>Follow the instructions in the <a href="../README.md">README</a> for any additional setup steps specific to your environment.</p>
+
+    <h2>Configuration</h2>
+    <p>maisonhome can be configured by editing the settings file in the root of the project. Common options include:</p>
+    <ul>
+      <li><strong>Environment</strong> – set to <code>development</code> or <code>production</code>.</li>
+      <li><strong>Port</strong> – the port the application listens on (default: <code>3000</code>).</li>
+      <li><strong>Log level</strong> – controls verbosity; one of <code>debug</code>, <code>info</code>, <code>warn</code>, or <code>error</code>.</li>
+    </ul>
+
+    <h2>Running the project</h2>
+    <p>Start the application with:</p>
+    <pre><code>npm start</code></pre>
+    <p>Open <a href="http://localhost:3000" target="_blank" rel="noopener noreferrer">http://localhost:3000</a> in your browser to see it in action.</p>
+
+    <h2>Testing</h2>
+    <p>Run the test suite to verify that everything is working correctly:</p>
+    <pre><code>npm test</code></pre>
+    <p>All tests should pass before submitting a pull request.</p>
+
+    <h2>Contributing</h2>
+    <p>Contributions are welcome! Please open an issue or submit a pull request on the
+      <a href="https://github.com/maison32/maisonhome" target="_blank" rel="noopener noreferrer">GitHub repository</a>.
+    </p>
+    <ol>
+      <li>Fork the repository.</li>
+      <li>Create a feature branch: <code>git checkout -b my-feature</code>.</li>
+      <li>Commit your changes and push the branch.</li>
+      <li>Open a pull request against <code>main</code>.</li>
+    </ol>
+  </main>
+
+  <footer>
+    Last updated: <time datetime="2026-03-24">March 24, 2026</time>
+  </footer>
+
+</body>
+</html>
